@@ -13,5 +13,6 @@
 // The entrypoint to the contract
 #define macro MAIN() = takes(0) returns (0) {
     // This should error since the `err` label is not defined
-    MACRO(err)
+    err: 
+        MACRO(err)
 }

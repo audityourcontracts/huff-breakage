@@ -4,3 +4,7 @@
 
 // Constructor definition for demonstrative purposes (not required to compile)
 #define macro CONSTRUCTOR() = takes(0) returns (0) {}
+
+#define macro MAIN() = takes(0) returns (0) {
+    CONSTRUCTOR()
+}

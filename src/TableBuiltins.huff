@@ -2,7 +2,7 @@
 /// @author Andreas Bigger <https://github.com/abigger87>
 /// @notice Table Builtins contain labels with missing definitions
 
-#define jumptable__packed PACKED_JUMPTABLE {
+#define jumptable PACKED_JUMPTABLE {
     lab_0 lab_1 lab_2 lab_3
 }
 
@@ -18,7 +18,21 @@
 }
 
 #define macro BUILTIN_TEST() = takes(0) returns(1) {
-    __tablesize(PACKED_JUMPTABLE)
+    __tablesize(PACKED_JUMPTABLE) __tablestart(PACKED_JUMPTABLE) 0x00 codecopy
+    lab_0:
+        0x100 0x00 mstore
+        0x20 0x00 return
+    lab_1:
+        0x200 0x00 mstore
+        0x20 0x00 return
+    lab_2:
+        0x300 0x00 mstore
+        0x20 0x00 return
+    lab_3:
+        0x400 0x00 mstore
+        0x20 0x00 return
+    err:
+        0x00 0x00 revert
 }
 
 // Create the inlined jumptable

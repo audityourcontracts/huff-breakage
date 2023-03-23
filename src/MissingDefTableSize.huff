@@ -2,6 +2,9 @@
 /// @author Andreas Bigger <https://github.com/abigger87>
 /// @notice Calling __tablesize() on a missing table definition should fail.
 
+#define jumptable STANDARD_JUMPTABLE {
+}
+
 // Creates a table
 #define macro CONSTRUCT_TABLE() = takes(0) returns(1) {
     __tablesize(STANDARD_JUMPTABLE) __tablestart(STANDARD_JUMPTABLE) 0x00 codecopy

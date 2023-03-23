@@ -8,7 +8,6 @@
 // The Macro containing an invalid statement
 #define macro MACRO() = takes(0) returns (0) {
     // This is an invalid statement for inside a macro
-    FREE_STORAGE_POINTER()
 }
 
 // The main entrypoint of the contract

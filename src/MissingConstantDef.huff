@@ -5,6 +5,8 @@
 // Constructor definition for demonstrative purposes (not required to compile)
 #define macro CONSTRUCTOR() = takes(0) returns (0) {}
 
+#define constant UNKNOWN_CONSTANT_DEFINITION = FREE_STORAGE_POINTER()
+
 // The main entrypoint of the contract
 #define macro MAIN() = takes(0) returns (0) {
     [UNKNOWN_CONSTANT_DEFINITION] sload

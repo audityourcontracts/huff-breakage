@@ -2,6 +2,8 @@
 /// @author Andreas Bigger <https://github.com/abigger87>
 /// @notice Constructor Definitions are not required, so this contract should compile fine!
 
+#define macro CONSTRUCTOR() = takes(0) returns (0) {}
+
 // The main entrypoint of the contract
 #define macro MAIN() = takes(0) returns (0) {
     caller 0x00 mstore
